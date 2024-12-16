@@ -31,7 +31,7 @@ const About = () => {
           </p>
         </div>
       </div>
-      <div className='hidden xl:flex w-full justify-between items-start mt-8 '>
+      <div className='hidden xl:flex w-full justify-between items-start mt-8 overflow-scroll'>
         <div>
           <div className='inline-block'>
             <AboutCard data={about[0]} index={1} />
