@@ -3,6 +3,7 @@ import "./globals.css";
 
 // component
 import Header from "@/components/Header";
+import Full_footer from "@/components/full_footer";
 
 const openSans = Open_Sans({
   subsets: ["latin"],
@@ -30,7 +31,7 @@ export default function RootLayout({ children }) {
         className={`${montserrat.variable} ${openSans.variable} antialiased`}
       > <Header/>
         {children}
-        
+        <Full_footer/>
       </body>
     </html>
   );

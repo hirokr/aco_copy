@@ -1,12 +1,12 @@
 "use client";
 import Mascot from "@/components/mascot";
-import Footer from "@/components/Footer";
 import Award from "@/components/Award";
-import Location from "@/components/Location";
-import MainPage from "@/components/MainPage";
-import LetsTalk from "@/components/letsTalk";
 import About from "@/components/About";
-import Policy from "@/components/policy";
+import MainPage from "@/components/MainPage";
+// import Location from "@/components/Location";
+// import LetsTalk from "@/components/letsTalk";
+// import Footer from "@/components/Footer";
+// import Policy from "@/components/policy";
 
 export default function Home() {
   return (
@@ -15,10 +15,7 @@ export default function Home() {
       <About/>
       <Award />
       <Mascot />
-      <LetsTalk/>
-      <Location/>
-      <Footer />
-      <Policy/>
+      
     </main>
   );
 }

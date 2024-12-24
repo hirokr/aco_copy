@@ -11,6 +11,7 @@ import DropDown from "./DropDown";
 
 import { IoMenu } from 'react-icons/io5'
 import { FaTimes } from 'react-icons/fa'
+import { usePathname } from "next/navigation";
 
 
 
@@ -20,6 +21,7 @@ const Header = () => {
   const [lastScrollPos, setLastScrollPos] = useState(0);
   const [scrollTimeout, setScrollTimeout] = useState(null);
   const [showMenu, setShowMenu] = useState(false);
+  const path = usePathname()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -99,7 +101,7 @@ const Header = () => {
         <div className='flex justify-center items-center gap-10  right-10 top-0'>
           <button
             className={`btn hidden sm:block lg:hidden ${
-              isAtTop && !showMenu ? "text-primary" : "text-accent"
+              isAtTop && !showMenu ? "text-accent" : "text-accent"
             }`}
           >
             Quick Enquiry
@@ -111,7 +113,7 @@ const Header = () => {
               }}
               className="cursor-pointer"
             >
-              <IoMenu className={`w-10 h-10 transition-all duration-300 hover:text-accent ${!showMenu ? "block": "hidden"} ${isAtTop? "text-white":"text-accent"}`}/>
+              <IoMenu className={`w-10 h-10 transition-all duration-300 hover:text-accent ${!showMenu ? "block": "hidden"} ${isAtTop || (path== "about")? "text-white":"text-accent"}`}/>
               <FaTimes className={`w-10 h-10 text-compo-content transition-all duration-300  ${showMenu ? "delay-500 block": "hidden"}`}/>
             </div>
             <div className='hidden lg:block'>
