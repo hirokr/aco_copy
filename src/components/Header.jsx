@@ -9,11 +9,9 @@ import { useEffect, useState } from "react";
 import MobileDropDown from "./MobileNavbar";
 import DropDown from "./DropDown";
 
-import { IoMenu } from 'react-icons/io5'
-import { FaTimes } from 'react-icons/fa'
+import { IoMenu } from "react-icons/io5";
+import { FaTimes } from "react-icons/fa";
 import { usePathname } from "next/navigation";
-
-
 
 const Header = () => {
   const [showHeader, setShowHeader] = useState(true);
@@ -21,7 +19,8 @@ const Header = () => {
   const [lastScrollPos, setLastScrollPos] = useState(0);
   const [scrollTimeout, setScrollTimeout] = useState(null);
   const [showMenu, setShowMenu] = useState(false);
-  const path = usePathname()
+  const path = usePathname();
+  // console.log(path)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -65,7 +64,12 @@ const Header = () => {
       }`}
     >
       <div className='z-50'>
-        <Link href='/'>
+        <Link
+          href='/'
+          onClick={() => {
+            setShowMenu(false);
+          }}
+        >
           <div
             className={`h-14 w-40 xl:w-48 xl:h-20  relative ${
               isAtTop ? "block" : "hidden"
@@ -111,16 +115,28 @@ const Header = () => {
               onClick={() => {
                 setShowMenu(!showMenu);
               }}
-              className="cursor-pointer"
+              className='cursor-pointer'
             >
-              <IoMenu className={`w-10 h-10 transition-all duration-300 hover:text-accent ${!showMenu ? "block": "hidden"} ${isAtTop || (path== "about")? "text-white":"text-accent"}`}/>
-              <FaTimes className={`w-10 h-10 text-compo-content transition-all duration-300  ${showMenu ? "delay-500 block": "hidden"}`}/>
+              <IoMenu
+                className={`w-10 h-10 transition-all duration-300 hover:text-accent ${
+                  !showMenu ? "block" : "hidden"
+                } ${isAtTop || path == "about" ? "text-white" : "text-accent"}`}
+              />
+              <FaTimes
+                className={`w-10 h-10 text-compo-content transition-all duration-300  ${
+                  showMenu ? "delay-500 block" : "hidden"
+                }`}
+              />
             </div>
             <div className='hidden lg:block'>
               <DropDown showMenu={showMenu} showHeader={showHeader} />
             </div>
             <div className='block lg:hidden'>
-              <MobileDropDown showMenu={showMenu} showHeader={showHeader} />
+              <MobileDropDown
+                showMenu={showMenu}
+                showHeader={showHeader}
+                setShowMenu={setShowMenu}
+              />
             </div>
           </div>
         </div>

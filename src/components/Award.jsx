@@ -27,6 +27,7 @@ const Award = () => {
             src='/gifs/awards-gif.gif'
             fill
             alt='mascot'
+            unoptimized
             className='object-contain'
           />
         </div>

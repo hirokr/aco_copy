@@ -1,19 +1,19 @@
 export const navLinks = [
   {
     title: "About",
-    link: "#",
+    link: "about",
     desc: "At Acodez, we're sdfgobsessed with quality.",
     works: [{ title: "Our Profile", link: "#" }],
   },
   {
     title: "Awards",
-    link: "#",
+    link: "/awards",
     desc: "At Acodez, we're obsessdfgsdfsed with quality.",
     works: [{ title: "Awards & Accolades", link: "#" }],
   },
   {
     title: "Services",
-    link: "#",
+    link: "/services",
     desc: "At Acodez, we're obsessed with quality.",
     works: [
       { title: "WordPress Development", link: "#" },
@@ -31,7 +31,7 @@ export const navLinks = [
   },
   {
     title: "Products",
-    link: "#",
+    link: "/products",
     desc: "At Acodez, wsdfgdsfge're obsessed with quality.",
     works: [
       { title: "Acowebs", link: "#" },
@@ -40,13 +40,13 @@ export const navLinks = [
   },
   {
     title: "Work",
-    link: "#",
+    link: "/work",
     desc: "At Acodez, we'resdfgsdfg obsessed with quality.At Acodez, we'resdfgsdfg obsessed with quality.At Acodez, we'resdfgsdfg obsessed with quality.At Acodez, we'resdfgsdfg obsessed with quality.",
     works: [{ title: "Our Profile", link: "#" }],
   },
   {
     title: "Technologies",
-    link: "#",
+    link: "/technologies",
     desc: "At Acodez, we're obsessed with quality.At Acodez, we're obsessed with quality.At Acodez, we're obsessed with quality.At Acodez, we're obsessed with quality.At Acodez, we're obsessed with quality.",
     works: [
       { title: "Websites", link: "#" },
@@ -59,25 +59,19 @@ export const navLinks = [
   },
   {
     title: "Careers",
-    link: "#",
+    link: "/careers",
     desc: "At Acodez, we're obsessed with qualisdfgty.",
     works: [{ title: "Our Profile", link: "#" }],
   },
   {
     title: "Blog",
-    link: "#",
+    link: "/blog",
     desc: "At Acodez, we're obsessed with quality.",
     works: [{ title: "Blog", link: "#" }],
   },
   {
-    title: "Careers",
-    link: "#",
-    desc: "At Acodez, we're obsessed with quality.",
-    works: [{ title: "Our Profile", link: "#" }],
-  },
-  {
     title: "Contact",
-    link: "#",
+    link: "/contact",
     desc: "At Acodez, we're obsessed with quality.",
     works: [
       { title: "Gurgaon (Delhi NCR)", link: "#" },
