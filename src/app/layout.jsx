@@ -29,9 +29,10 @@ export default function RootLayout({ children }) {
     <html lang='en'>
       <body
         className={`${montserrat.variable} ${openSans.variable} antialiased`}
-      > <Header/>
+      >
+        <Header />
         {children}
-        <Full_footer/>
+        <Full_footer />
       </body>
     </html>
   );

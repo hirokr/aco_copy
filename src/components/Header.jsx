@@ -120,7 +120,7 @@ const Header = () => {
               <IoMenu
                 className={`w-10 h-10 transition-all duration-300 hover:text-accent ${
                   !showMenu ? "block" : "hidden"
-                } ${isAtTop || path == "about" ? "text-white" : "text-accent"}`}
+                } ${isAtTop ? "text-white" : "text-accent"}`}
               />
               <FaTimes
                 className={`w-10 h-10 text-compo-content transition-all duration-300  ${
