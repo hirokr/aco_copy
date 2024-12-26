@@ -32,7 +32,7 @@ const DropDown = ({showMenu}) => {
           {navLinks[value].works.map((links, index) => {
             return (
               <div
-                key={index}
+                key={index  } //noen
                 className='py-2 transition-all duration-300 hover:text-accent xl:text-xl '
               >
                 <Link href={links.link}>{links.title}</Link>
