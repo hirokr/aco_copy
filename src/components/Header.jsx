@@ -101,7 +101,7 @@ const Header = () => {
         </Link>
       </div>
       <div className='flex gap-10'>
-        <Navbar isAtTop={isAtTop} showMenu={showMenu} />
+        <Navbar isAtTop={isAtTop} showMenu={showMenu}  setShowMenu={setShowMenu} />
         <div className='flex justify-center items-center gap-10  right-10 top-0'>
           <button
             className={`btn hidden sm:block lg:hidden ${
@@ -129,7 +129,7 @@ const Header = () => {
               />
             </div>
             <div className='hidden lg:block'>
-              <DropDown showMenu={showMenu} showHeader={showHeader} />
+              <DropDown showMenu={showMenu} showHeader={showHeader} setShowMenu={setShowMenu} />
             </div>
             <div className='block lg:hidden'>
               <MobileDropDown

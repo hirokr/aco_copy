@@ -5,14 +5,20 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
-const DropDown = ({showMenu}) => {
+const DropDown = ({ showMenu, setShowMenu }) => {
   const [value, setValue] = useState(0);
   return (
     <div
       className={`px-5 sm:px-14 lg:px-20 xl:px-44 absolute bg-white top-[7.1rem]
-    w-full  left-0 text-compo-content py-8 justify-between items-start flex duration-500 transition-all ${showMenu? "h-[100vh] translate-y-0":" h-0 -translate-y-[120vh]"}`}
+    w-full  left-0 text-compo-content py-8 justify-between items-start flex duration-500 transition-all ${
+      showMenu ? "h-[100vh] translate-y-0" : " h-0 -translate-y-[120vh]"
+    }`}
     >
-      <div className={`basis-1/4  p-0 ${showMenu? "border-r-[1px] delay-700 " :"border-r-0" }`}>
+      <div
+        className={`basis-1/4  p-0 ${
+          showMenu ? "border-r-[1px] delay-700 " : "border-r-0"
+        }`}
+      >
         {navLinks.map((items, index) => {
           return (
             <div
@@ -20,6 +26,9 @@ const DropDown = ({showMenu}) => {
               className='py-4 text-2xl font-thin transition-all duration-500 hover:text-accent'
               onMouseOver={() => {
                 setValue(index);
+              }}
+              onClick={() => {
+                setShowMenu(false);
               }}
             >
               <Link href={items.link}>{items.title}</Link>
@@ -32,7 +41,7 @@ const DropDown = ({showMenu}) => {
           {navLinks[value].works.map((links, index) => {
             return (
               <div
-                key={index  } //noen
+                key={index} //noen
                 className='py-2 transition-all duration-300 hover:text-accent xl:text-xl '
               >
                 <Link href={links.link}>{links.title}</Link>
