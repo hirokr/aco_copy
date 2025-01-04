@@ -19,14 +19,20 @@ const Header = () => {
   const [lastScrollPos, setLastScrollPos] = useState(0);
   const [scrollTimeout, setScrollTimeout] = useState(null);
   const [showMenu, setShowMenu] = useState(false);
+  const [home, setHome] = useState(true);
   const path = usePathname();
-  // console.log(path)
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.scrollY;
       const viewportHeight = window.innerHeight;
       setIsAtTop(currentScrollPos < viewportHeight);
+      if (path !== "/") {
+        setHome(true);
+      }
+      if (path === "/") {
+        setHome(false);
+      }
 
       if (currentScrollPos > lastScrollPos && currentScrollPos > 50) {
         setShowHeader(false);
@@ -51,7 +57,7 @@ const Header = () => {
       window.removeEventListener("scroll", handleScroll);
       if (scrollTimeout) clearTimeout(scrollTimeout);
     };
-  }, [lastScrollPos, scrollTimeout, isAtTop]);
+  }, [lastScrollPos, scrollTimeout, isAtTop, path]);
 
   return (
     <header
@@ -59,8 +65,8 @@ const Header = () => {
         showHeader || showMenu ? "translate-y-0" : "-translate-y-full"
       } ${
         !isAtTop || showMenu
-          ? "bg-white text-black drop-shadow-lg z-[100]"
-          : "text-primary"
+          ? "bg-white text-compo-desc drop-shadow-lg z-[100]"
+          : "text-primary "
       }`}
     >
       <div className='z-50'>
@@ -101,7 +107,12 @@ const Header = () => {
         </Link>
       </div>
       <div className='flex gap-10'>
-        <Navbar isAtTop={isAtTop} showMenu={showMenu}  setShowMenu={setShowMenu} />
+        <Navbar
+          isAtTop={isAtTop}
+          showMenu={showMenu}
+          setShowMenu={setShowMenu}
+          home={home}
+        />
         <div className='flex justify-center items-center gap-10  right-10 top-0'>
           <button
             className={`btn hidden sm:block lg:hidden ${
@@ -120,7 +131,9 @@ const Header = () => {
               <IoMenu
                 className={`w-10 h-10 transition-all duration-300 hover:text-accent ${
                   !showMenu ? "block" : "hidden"
-                } ${isAtTop ? "text-white" : "text-accent"}`}
+                } ${isAtTop && !home ? "text-white" : "text-accent"}
+                
+                `}
               />
               <FaTimes
                 className={`w-10 h-10 text-compo-content transition-all duration-300  ${
@@ -129,7 +142,11 @@ const Header = () => {
               />
             </div>
             <div className='hidden lg:block'>
-              <DropDown showMenu={showMenu} showHeader={showHeader} setShowMenu={setShowMenu} />
+              <DropDown
+                showMenu={showMenu}
+                showHeader={showHeader}
+                setShowMenu={setShowMenu}
+              />
             </div>
             <div className='block lg:hidden'>
               <MobileDropDown

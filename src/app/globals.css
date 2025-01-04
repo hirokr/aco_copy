@@ -16,7 +16,7 @@
   }
 
   .btn {
-    @apply relative bg-transparent border-2 border-accent rounded-full py-2 px-5 z-10 overflow-hidden m-auto text-center inline-block cursor-pointer hover:text-primary transition-all duration-500;
+    @apply relative bg-transparent border-2 border-accent rounded-full py-2 px-5 z-10 overflow-hidden m-auto text-center inline-block cursor-pointer hover:text-primary text-compo-desc transition-all duration-500;
 
     @apply hover:before:shadow-inset before:absolute before:w-full before:aspect-square before:rounded-full before:-z-10 before:transition-all before:duration-700
     before:top-1/2 before:left-1/2 before:transform before:-translate-x-1/2 before:-translate-y-1/2;
