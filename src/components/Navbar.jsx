@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { MdHome } from "react-icons/md";
 
-const Navbar = ({isAtTop, showMenu}) => {
+const Navbar = ({isAtTop, showMenu }) => {
   const [textCol, setTextCol] = useState(false)
 
   return (
@@ -41,7 +41,7 @@ const Navbar = ({isAtTop, showMenu}) => {
           </Link>
         </li>
         <li className='group'>
-          <Link href='/' className='navLink'>
+          <Link href='/contact' className='navLink'>
             Contact
           </Link>
         </li>
